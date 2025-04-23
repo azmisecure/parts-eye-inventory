@@ -4,7 +4,9 @@ import {
   Package, 
   Home, 
   Tag, 
-  MapPin, 
+  MapPin,
+  Cpu, 
+  Wrench,
   Menu 
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -44,6 +46,16 @@ const Sidebar = () => {
       title: 'Locations', 
       path: '/locations', 
       icon: MapPin 
+    },
+    {
+      title: 'Maintenance',
+      path: '/maintenance',
+      icon: Wrench
+    },
+    {
+      title: 'Blockchain',
+      path: '/blockchain',
+      icon: Cpu
     },
   ];
 

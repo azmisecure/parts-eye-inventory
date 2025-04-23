@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { addBlock, Blockchain, Block, initBlockchain, loadBlockchain, saveBlockchain, simulateConsensus, NETWORK_NODES } from '../lib/blockchain';
-import { Activity } from '../lib/data';
+import { Activity, MaintenanceDetails } from '../lib/data';
 import { useToast } from '@/components/ui/use-toast';
 
 interface BlockchainContextType {
@@ -58,9 +58,15 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
           const newBlockchain = addBlock(blockchain, transaction);
           setBlockchain(newBlockchain);
           
+          let toastMessage = `Transaction for "${transaction.partName}" has been added to the blockchain`;
+          
+          if (transaction.type === 'maintenance') {
+            toastMessage = `Maintenance record for "${transaction.partName}" has been verified and added to the blockchain`;
+          }
+          
           toast({
             title: "Block Mined Successfully",
-            description: `Transaction for "${transaction.partName}" has been added to the blockchain`,
+            description: toastMessage,
           });
           
           setConsensusStatus('Transaction completed and verified');
@@ -86,9 +92,11 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
   const addTransaction = (activity: Activity) => {
     setPendingTransactions(prev => [...prev, activity]);
     
+    const transactionType = activity.type === 'maintenance' ? 'maintenance record' : 'transaction';
+    
     toast({
-      title: "Transaction Submitted",
-      description: "Your transaction has been submitted to the network for validation",
+      title: `${transactionType.charAt(0).toUpperCase() + transactionType.slice(1)} Submitted`,
+      description: `Your ${transactionType} has been submitted to the network for validation`,
     });
   };
 

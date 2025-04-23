@@ -27,11 +27,33 @@ export interface Location {
 
 export interface Activity {
   id: string;
-  type: 'add' | 'remove' | 'update' | 'move';
+  type: 'add' | 'remove' | 'update' | 'move' | 'maintenance';
   partName: string;
   quantity?: number;
   user: string;
   date: string;
+  maintenanceDetails?: MaintenanceDetails;
+}
+
+export interface MaintenanceRecord {
+  id: string;
+  partId: string;
+  partName: string;
+  maintenanceType: 'preventive' | 'corrective' | 'predictive';
+  status: 'scheduled' | 'in-progress' | 'completed' | 'cancelled';
+  technician: string;
+  startDate: string;
+  completionDate?: string;
+  details: string;
+  cost: number;
+  workOrderNumber: string;
+}
+
+export interface MaintenanceDetails {
+  maintenanceType: 'preventive' | 'corrective' | 'predictive';
+  workOrderNumber: string;
+  description: string;
+  cost: number;
 }
 
 export const sampleParts: Part[] = [
@@ -373,6 +395,72 @@ export const sampleLocations: Location[] = [
   },
 ];
 
+export const sampleMaintenanceRecords: MaintenanceRecord[] = [
+  {
+    id: '1',
+    partId: '1',
+    partName: 'Aircraft Oil Filter',
+    maintenanceType: 'preventive',
+    status: 'completed',
+    technician: 'John Smith',
+    startDate: '2025-04-15',
+    completionDate: '2025-04-15',
+    details: 'Regular oil filter replacement as per schedule',
+    cost: 150.00,
+    workOrderNumber: 'WO-2025-0415-001'
+  },
+  {
+    id: '2',
+    partId: '2',
+    partName: 'Fuel Pump',
+    maintenanceType: 'corrective',
+    status: 'completed',
+    technician: 'Maria Rodriguez',
+    startDate: '2025-04-10',
+    completionDate: '2025-04-12',
+    details: 'Replaced faulty fuel pump that was causing pressure inconsistencies',
+    cost: 750.00,
+    workOrderNumber: 'WO-2025-0410-002'
+  },
+  {
+    id: '3',
+    partId: '3',
+    partName: 'Landing Gear Tire',
+    maintenanceType: 'preventive',
+    status: 'completed',
+    technician: 'Robert Chen',
+    startDate: '2025-04-18',
+    completionDate: '2025-04-18',
+    details: 'Routine tire inspection and pressure check',
+    cost: 95.00,
+    workOrderNumber: 'WO-2025-0418-003'
+  },
+  {
+    id: '4',
+    partId: '18',
+    partName: 'Starter Generator',
+    maintenanceType: 'corrective',
+    status: 'in-progress',
+    technician: 'Emma Johnson',
+    startDate: '2025-04-22',
+    details: 'Troubleshooting intermittent startup issues',
+    cost: 450.00,
+    workOrderNumber: 'WO-2025-0422-004'
+  },
+  {
+    id: '5',
+    partId: '13',
+    partName: 'Flap Actuator',
+    maintenanceType: 'predictive',
+    status: 'scheduled',
+    technician: 'David Wilson',
+    startDate: '2025-04-25',
+    details: 'Preventive replacement based on usage data analysis',
+    cost: 1200.00,
+    workOrderNumber: 'WO-2025-0425-005'
+  }
+];
+
 export const sampleActivities: Activity[] = [
   {
     id: '1',
@@ -404,6 +492,32 @@ export const sampleActivities: Activity[] = [
     user: 'James Crew',
     date: '2025-04-18 09:40',
   },
+  {
+    id: '5',
+    type: 'maintenance',
+    partName: 'Aircraft Oil Filter',
+    user: 'John Smith',
+    date: '2025-04-15 13:22',
+    maintenanceDetails: {
+      maintenanceType: 'preventive',
+      workOrderNumber: 'WO-2025-0415-001',
+      description: 'Regular oil filter replacement as per schedule',
+      cost: 150.00
+    }
+  },
+  {
+    id: '6',
+    type: 'maintenance',
+    partName: 'Fuel Pump',
+    user: 'Maria Rodriguez',
+    date: '2025-04-12 16:45',
+    maintenanceDetails: {
+      maintenanceType: 'corrective',
+      workOrderNumber: 'WO-2025-0410-002',
+      description: 'Replaced faulty fuel pump',
+      cost: 750.00
+    }
+  },
 ];
 
 export const navigationItems = [
@@ -426,6 +540,11 @@ export const navigationItems = [
     title: "Locations",
     path: "/locations",
     icon: "MapPin"
+  },
+  {
+    title: "Maintenance",
+    path: "/maintenance",
+    icon: "Wrench"
   },
   {
     title: "Blockchain",

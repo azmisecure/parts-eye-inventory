@@ -11,6 +11,7 @@ import Locations from "./pages/Locations";
 import NotFound from "./pages/NotFound";
 import { BlockchainProvider } from "./context/BlockchainContext";
 import BlockchainExplorer from "./pages/BlockchainExplorer";
+import Maintenance from "./pages/Maintenance";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/parts" element={<Parts />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/blockchain" element={<BlockchainExplorer />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
