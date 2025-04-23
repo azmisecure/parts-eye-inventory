@@ -9,24 +9,29 @@ import Parts from "./pages/Parts";
 import Categories from "./pages/Categories";
 import Locations from "./pages/Locations";
 import NotFound from "./pages/NotFound";
+import { BlockchainProvider } from "./context/BlockchainContext";
+import BlockchainExplorer from "./pages/BlockchainExplorer";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/parts" element={<Parts />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/locations" element={<Locations />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <BlockchainProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/parts" element={<Parts />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/blockchain" element={<BlockchainExplorer />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </BlockchainProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

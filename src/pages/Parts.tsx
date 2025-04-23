@@ -7,12 +7,14 @@ import { Part, sampleParts } from '@/lib/data';
 import PartCard from '@/components/parts/PartCard';
 import PartForm from '@/components/parts/PartForm';
 import { useToast } from '@/components/ui/use-toast';
+import { useBlockchain } from '@/context/BlockchainContext';
 
 const Parts = () => {
   const [parts, setParts] = useState<Part[]>(sampleParts);
   const [showAddPartDialog, setShowAddPartDialog] = useState(false);
   const [editingPart, setEditingPart] = useState<Part | undefined>(undefined);
   const { toast } = useToast();
+  const { addTransaction } = useBlockchain();
 
   const handleAddPart = (newPart: Partial<Part>) => {
     const part = {
@@ -25,13 +27,23 @@ const Parts = () => {
       minQuantity: newPart.minQuantity || 0,
       price: newPart.price || 0,
       lastUpdated: newPart.lastUpdated || new Date().toISOString().split('T')[0],
-      image: newPart.image || '/placeholder.svg',
+      image: newPart.image || 'https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=800&q=80',
     };
     
     setParts([...parts, part]);
     toast({
       title: "Part Added",
       description: `${part.name} has been added to inventory.`,
+    });
+
+    // Record transaction on blockchain
+    addTransaction({
+      id: `tx-${Date.now()}`,
+      type: 'add',
+      partName: part.name,
+      quantity: part.quantity,
+      user: 'Current User',
+      date: new Date().toISOString(),
     });
   };
 
@@ -48,15 +60,37 @@ const Parts = () => {
       title: "Part Updated",
       description: `${updatedPart.name} has been updated.`,
     });
+
+    // Record transaction on blockchain
+    addTransaction({
+      id: `tx-${Date.now()}`,
+      type: 'update',
+      partName: updatedPart.name || editingPart.name,
+      user: 'Current User',
+      date: new Date().toISOString(),
+    });
   };
 
   const handleDeletePart = (partId: string) => {
-    setParts(parts.filter(part => part.id !== partId));
-    toast({
-      title: "Part Deleted",
-      description: "The part has been removed from inventory.",
-      variant: "destructive",
-    });
+    const partToDelete = parts.find(part => part.id === partId);
+    if (partToDelete) {
+      setParts(parts.filter(part => part.id !== partId));
+      toast({
+        title: "Part Deleted",
+        description: "The part has been removed from inventory.",
+        variant: "destructive",
+      });
+
+      // Record transaction on blockchain
+      addTransaction({
+        id: `tx-${Date.now()}`,
+        type: 'remove',
+        partName: partToDelete.name,
+        quantity: 1,
+        user: 'Current User',
+        date: new Date().toISOString(),
+      });
+    }
   };
 
   const openEditDialog = (part: Part) => {

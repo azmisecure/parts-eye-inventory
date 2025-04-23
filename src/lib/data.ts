@@ -405,3 +405,31 @@ export const sampleActivities: Activity[] = [
     date: '2025-04-18 09:40',
   },
 ];
+
+export const navigationItems = [
+  {
+    title: "Dashboard",
+    path: "/",
+    icon: "LayoutDashboard"
+  },
+  {
+    title: "Parts",
+    path: "/parts",
+    icon: "Package"
+  },
+  {
+    title: "Categories",
+    path: "/categories",
+    icon: "Tags"
+  },
+  {
+    title: "Locations",
+    path: "/locations",
+    icon: "MapPin"
+  },
+  {
+    title: "Blockchain",
+    path: "/blockchain",
+    icon: "Cpu"
+  },
+];
