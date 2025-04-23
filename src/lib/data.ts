@@ -1,4 +1,3 @@
-
 export interface Part {
   id: string;
   name: string;
@@ -46,7 +45,7 @@ export const sampleParts: Part[] = [
     minQuantity: 5,
     price: 34.95,
     lastUpdated: '2025-04-21',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1487887235947-a955ef187fcc?w=800&q=80',
   },
   {
     id: '2',
@@ -58,7 +57,7 @@ export const sampleParts: Part[] = [
     minQuantity: 2,
     price: 550.0,
     lastUpdated: '2025-04-21',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
   },
   {
     id: '3',
@@ -70,7 +69,7 @@ export const sampleParts: Part[] = [
     minQuantity: 10,
     price: 289.0,
     lastUpdated: '2025-04-20',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80',
   },
   {
     id: '4',
@@ -82,7 +81,7 @@ export const sampleParts: Part[] = [
     minQuantity: 20,
     price: 120.5,
     lastUpdated: '2025-04-18',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80',
   },
   {
     id: '5',
@@ -94,7 +93,7 @@ export const sampleParts: Part[] = [
     minQuantity: 4,
     price: 147.0,
     lastUpdated: '2025-04-17',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=800&q=80',
   },
   {
     id: '6',
@@ -106,7 +105,7 @@ export const sampleParts: Part[] = [
     minQuantity: 15,
     price: 44.0,
     lastUpdated: '2025-04-15',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=800&q=80',
   },
   {
     id: '7',
@@ -118,7 +117,7 @@ export const sampleParts: Part[] = [
     minQuantity: 6,
     price: 395.5,
     lastUpdated: '2025-04-12',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1506089676908-3592f7389d4d?w=800&q=80',
   },
   {
     id: '8',
@@ -130,7 +129,7 @@ export const sampleParts: Part[] = [
     minQuantity: 3,
     price: 120.0,
     lastUpdated: '2025-04-16',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&q=80',
   },
   {
     id: '9',
@@ -142,7 +141,7 @@ export const sampleParts: Part[] = [
     minQuantity: 8,
     price: 89.99,
     lastUpdated: '2025-04-19',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&q=80',
   },
   {
     id: '10',
@@ -154,7 +153,7 @@ export const sampleParts: Part[] = [
     minQuantity: 2,
     price: 234.75,
     lastUpdated: '2025-04-13',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=800&q=80',
   },
   {
     id: '11',
@@ -166,7 +165,7 @@ export const sampleParts: Part[] = [
     minQuantity: 2,
     price: 770.0,
     lastUpdated: '2025-04-10',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1465101099481-0af3ac1a8f51?w=800&q=80',
   },
   {
     id: '12',
@@ -178,7 +177,7 @@ export const sampleParts: Part[] = [
     minQuantity: 3,
     price: 520.0,
     lastUpdated: '2025-04-14',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800&q=80',
   },
   {
     id: '13',
@@ -190,7 +189,7 @@ export const sampleParts: Part[] = [
     minQuantity: 2,
     price: 1850.0,
     lastUpdated: '2025-04-21',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80',
   },
   {
     id: '14',
@@ -202,7 +201,7 @@ export const sampleParts: Part[] = [
     minQuantity: 2,
     price: 995.0,
     lastUpdated: '2025-04-21',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1483107977081-1600499cedd9?w=800&q=80',
   },
   {
     id: '15',
@@ -214,7 +213,7 @@ export const sampleParts: Part[] = [
     minQuantity: 5,
     price: 65.0,
     lastUpdated: '2025-04-20',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80',
   },
   {
     id: '16',
@@ -226,7 +225,7 @@ export const sampleParts: Part[] = [
     minQuantity: 8,
     price: 48.99,
     lastUpdated: '2025-04-19',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1473187983305-f615310e7daa?w=800&q=80',
   },
   {
     id: '17',
@@ -238,7 +237,7 @@ export const sampleParts: Part[] = [
     minQuantity: 3,
     price: 399.95,
     lastUpdated: '2025-04-17',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=800&q=80',
   },
   {
     id: '18',
@@ -250,7 +249,7 @@ export const sampleParts: Part[] = [
     minQuantity: 1,
     price: 2345.45,
     lastUpdated: '2025-04-18',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1506089676908-3592f7389d4d?w=800&q=80',
   },
   {
     id: '19',
@@ -262,7 +261,7 @@ export const sampleParts: Part[] = [
     minQuantity: 1,
     price: 754.0,
     lastUpdated: '2025-04-15',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800&q=80',
   },
   {
     id: '20',
@@ -274,7 +273,7 @@ export const sampleParts: Part[] = [
     minQuantity: 5,
     price: 129.99,
     lastUpdated: '2025-04-16',
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&q=80',
   },
 ];
 
