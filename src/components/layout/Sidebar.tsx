@@ -53,9 +53,11 @@ const Sidebar = () => {
         <div className="flex items-center gap-2">
           <Package className="h-6 w-6" />
           <h2 className="text-xl font-bold">Parts-Eye</h2>
-          <SidebarTrigger className="ml-auto md:hidden">
-            <Menu className="h-5 w-5" />
-          </SidebarTrigger>
+          <div className="ml-auto md:hidden">
+            <SidebarTrigger>
+              <Menu className="h-5 w-5" />
+            </SidebarTrigger>
+          </div>
         </div>
       </SidebarHeader>
       <SidebarContent>
