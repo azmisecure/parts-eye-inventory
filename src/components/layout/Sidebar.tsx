@@ -53,10 +53,8 @@ const Sidebar = () => {
         <div className="flex items-center gap-2">
           <Package className="h-6 w-6" />
           <h2 className="text-xl font-bold">Parts-Eye</h2>
-          <SidebarTrigger asChild className="ml-auto md:hidden">
-            <button className="p-1">
-              <Menu className="h-5 w-5" />
-            </button>
+          <SidebarTrigger className="ml-auto md:hidden">
+            <Menu className="h-5 w-5" />
           </SidebarTrigger>
         </div>
       </SidebarHeader>
