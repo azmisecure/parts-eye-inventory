@@ -1,4 +1,3 @@
-
 // Interfaces
 export interface LeasingAgreement {
   id: string;
@@ -49,6 +48,7 @@ export interface Activity {
   quantity?: number;
   user: string;
   date: string;
+  maintenanceDetails?: MaintenanceDetails;
 }
 
 export interface MaintenanceDetails {
