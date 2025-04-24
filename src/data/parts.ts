@@ -1,0 +1,53 @@
+
+import { Part } from '../types/inventory';
+
+export const sampleParts: Part[] = [
+  {
+    id: '1',
+    name: 'Hydraulic Actuator',
+    sku: 'HA-001',
+    category: 'Hydraulics',
+    location: 'Warehouse A',
+    quantity: 15,
+    minQuantity: 5,
+    price: 299.99,
+    lastUpdated: '2025-04-10',
+    image: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&q=80',
+  },
+  {
+    id: '2',
+    name: 'Fuel Pump',
+    sku: 'FP-002',
+    category: 'Fuel System',
+    location: 'Warehouse B',
+    quantity: 3,
+    minQuantity: 5,
+    price: 159.99,
+    lastUpdated: '2025-04-15',
+    image: 'https://images.unsplash.com/photo-1602338681424-9c586472a1d2?w=800&q=80',
+  },
+  {
+    id: '3',
+    name: 'Navigation Light',
+    sku: 'NL-003',
+    category: 'Electrical',
+    location: 'Warehouse A',
+    quantity: 25,
+    minQuantity: 10,
+    price: 79.99,
+    lastUpdated: '2025-04-20',
+    image: 'https://images.unsplash.com/photo-1501523460185-2aa5d2a0f981?w=800&q=80',
+  },
+  {
+    id: '4',
+    name: 'Oxygen Mask',
+    sku: 'OM-004',
+    category: 'Safety',
+    location: 'Warehouse C',
+    quantity: 50,
+    minQuantity: 20,
+    price: 45.99,
+    lastUpdated: '2025-04-18',
+    image: 'https://images.unsplash.com/photo-1584365685547-9a5fb6f3a70c?w=800&q=80',
+  },
+];
