@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { useBlockchain } from '@/context/BlockchainContext';
@@ -92,6 +91,9 @@ const Leasing = () => {
               <CardContent>
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">
+                    Asset Type: {agreement.asset_type}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Lessor: {agreement.lessor}
                   </p>
                   <p className="text-sm text-muted-foreground">
@@ -126,11 +128,11 @@ const Leasing = () => {
                   <h4 className="font-semibold mb-2">Part Information</h4>
                   <p className="text-sm">Name: {selectedAgreement.partName}</p>
                   <p className="text-sm">ID: {selectedAgreement.partId}</p>
+                  <p className="text-sm">Asset Type: {selectedAgreement.asset_type}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Agreement Status</h4>
                   <div className="flex items-center gap-2">
-                    {/* Fix: Create the Icon component from the function's return value */}
                     {(() => {
                       const IconComponent = getStatusIcon(selectedAgreement.status);
                       return <IconComponent className="h-5 w-5" />;
