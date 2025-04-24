@@ -8,7 +8,7 @@ import {
   Cpu, 
   Wrench,
   Menu,
-  FileContract
+  ScrollText  // Changed from FileContract to ScrollText
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -56,7 +56,7 @@ const Sidebar = () => {
     {
       title: 'Leasing',
       path: '/leasing',
-      icon: FileContract
+      icon: ScrollText  // Changed from FileContract to ScrollText
     },
     {
       title: 'Blockchain',

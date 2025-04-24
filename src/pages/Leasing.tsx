@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { useBlockchain } from '@/context/BlockchainContext';
@@ -7,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { FileContract, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { ScrollText, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Leasing = () => {
@@ -40,7 +39,7 @@ const Leasing = () => {
       case 'terminated':
         return AlertCircle;
       default:
-        return FileContract;
+        return ScrollText;
     }
   };
 
