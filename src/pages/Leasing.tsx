@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { useBlockchain } from '@/context/BlockchainContext';
@@ -129,7 +130,11 @@ const Leasing = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Agreement Status</h4>
                   <div className="flex items-center gap-2">
-                    {getStatusIcon(selectedAgreement.status)({ className: "h-5 w-5" })}
+                    {/* Fix: Create the Icon component from the function's return value */}
+                    {(() => {
+                      const IconComponent = getStatusIcon(selectedAgreement.status);
+                      return <IconComponent className="h-5 w-5" />;
+                    })()}
                     <span className="capitalize">{selectedAgreement.status}</span>
                   </div>
                 </div>
