@@ -7,7 +7,8 @@ import {
   MapPin,
   Cpu, 
   Wrench,
-  Menu 
+  Menu,
+  FileContract
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -51,6 +52,11 @@ const Sidebar = () => {
       title: 'Maintenance',
       path: '/maintenance',
       icon: Wrench
+    },
+    {
+      title: 'Leasing',
+      path: '/leasing',
+      icon: FileContract
     },
     {
       title: 'Blockchain',
